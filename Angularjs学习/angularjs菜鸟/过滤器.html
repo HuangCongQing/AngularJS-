@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤器</title>
+	<script src="angular-1.0.1.min.js"></script>
+
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+	名：<input type="text" ng-model="lastName"><br>
+	姓：<input type="text" ng-model="firstName"><br>
+	<br>
+	uppercase姓名：{{(firstName+" "+ lastName)|uppercase}}
+
+	<br>
+	lowercase姓名：{{fullName()|lowercase}}<br>
+	货币格式{{Name|currency}}
+
+	<p>循环对象</p>
+	<ul>
+		<li ng-repeat="x in names">
+			{{x.name+','+x.country}}
+		</li>
+		<li ng-repeat="x in names |orderBy:'country'">
+			{{x.name+','+x.country}}
+		</li>
+	</ul>
+
+</div>
+
+<script>
+	var app=angular.module('myApp',[]);
+	app.controller('myCtrl',function($scope){
+		$scope.firstName="重庆chongqing";
+		$scope.lastName="黄Huang";
+		$scope.Name="123456";
+		$scope.fullName = function() {
+        return $scope.firstName + " " + $scope.lastName;
+    
+
+    	  $scope.names=[
+        	{name:'黄重庆',country:'河南'},
+        	{name:'黄身学',country:'海南'},
+        	{name:'高超',country:'重庆'}
+        ];
+       }
+
+	});
+</script>	
+</body>
+</html>

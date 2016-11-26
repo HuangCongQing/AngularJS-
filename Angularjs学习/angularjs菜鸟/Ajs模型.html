@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajs模型</title>
+	<script src="angular-1.0.1.min.js"></script>
+
+	<style type="text/css">
+input.ng-invalid {
+    background-color: lightblue;
+}
+</style>
+
+</head>
+<body>
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+名字: <input ng-model="name">
+	<p>{{name}}</p>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "John Doe";
+});
+</script>
+
+<p>使用 ng-model 指令来绑定输入域的值到控制器的属性。</p> -->
+
+
+<!-- 
+<h1>验证用户输入ng-show="myForm.myAddress.$error.email</h1>>
+<form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
+</form>
+
+<p>在输入框中输入你的邮箱地址，如果不是一个合法的邮箱地址，会弹出提示信息。</p>
+
+ -->
+
+
+<h1>改变属性</h1>
+<form ng-app="" name="myForm">
+    输入你的名字:
+    <input name="myName" ng-model="myText" required>
+</form>
+<p>编辑文本域，不同状态背景颜色会发送变化。</p>
+<p>文本域添加了 required 属性，该值是必须的，如果为空则是不合法的。</p>
+
+
+</body>
+</html>

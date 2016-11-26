@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义指令</title>
+	<script src="angular-1.0.1.min.js"></script>
+</head>
+<body ng-app="myApp">
+	
+	  <!-- 222指令 -->
+  <p>姓名: <input type="text" ng-model="firstName"></p>     
+  <!--  ng-model指令把元素值（比如输入域的值）绑定到应用程序 -->
+	<p>你输入的为: {{ firstName }}</p>
+
+
+	<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+  <p>使用 ng-repeat 来循环数组,相当于循环</p>
+  <ul>
+    <li ng-repeat="x in names">
+      {{"she is " +x }}
+    </li>
+  </ul>
+	</div>
+
+<!-- 	ng-repeat 指令用在一个对象数组上：
+ -->
+<div ng-app="" ng-init="namess=[
+{name:'俊杰',ID:'20152128'},
+{name:'沿宏',ID:'2345trty'},
+{name:'高超',ID:'2345678'}
+
+]">
+	
+<p>循环对象</p>
+<ul>
+	<li ng-repeat="y in namess">
+		{{y.name+","+y.ID}}
+	</li>
+</ul>
+</div>
+
+
+<div class="huang-directive"></div>
+<script>
+var app = angular.module("myApp", []);
+app.directive("huangDirective", function() {
+    return {
+        restrict : "C",
+        template : "<h1>好帅啊!</h1>"
+    };
+});
+</script>
+
+</body>
+</html>

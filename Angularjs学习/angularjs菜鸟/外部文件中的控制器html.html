@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>外部文件控制器</title>
+	<script src="angular-1.0.1.min.js"></script>
+
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+	名：<input type="text" ng-model="lastName"><br>
+	姓：<input type="text" ng-model="firstName"><br>
+	<br>
+	姓名：{{firstName+" "+ lastName}}
+	<br>
+	姓名：{{fullName()}}
+</div>
+
+<script src="外部文件中的控制器.js">
+</script>	
+
+</body>
+</html>
