@@ -1,3 +1,4 @@
+//var myModule = angular.module("MyModule", []);????????????为什么错了？？？？？？？？
 var myModule = angular.module("MyModule", []);
 myModule.controller('MyCtrl', ['$scope',
     function($scope) {
